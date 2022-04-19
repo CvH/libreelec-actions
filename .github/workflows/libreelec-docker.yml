@@ -27,6 +27,8 @@ jobs:
         run: |
           cd LibreELEC.tv
           echo "ls: $(ls -la)"
+          echo "ls: $(ls -la /)"
+          echo "ls: $(ls -la /home)"
           echo "pwd: $(pwd)"
           echo "id: $(id)"
           echo "whoami: $(whoami)"
