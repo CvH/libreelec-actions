@@ -31,8 +31,9 @@ jobs:
           echo "whoami: $(whoami)"
           echo "docker images: $(docker images)"
           ln -s /sources .
+          ln -s /target .
           echo "ls: $(ls -la)"
-          docker run --rm -v /var/media/DATA/github-actions/sources:/sources -v `pwd`:/build -w /build -i -e CUSTOM_GIT_HASH=ghactions -e PROJECT=Generic -e ARCH=x86_64 -e ONELOG=no -e LOGCOMBINE=never gh-libreelec make image
+          docker run --rm -v /var/media/DATA/github-actions/sources:/sources -v /var/media/DATA/github-actions/target:/target -v `pwd`:/build -w /build -i -e CUSTOM_GIT_HASH=ghactions -e PROJECT=Generic -e ARCH=x86_64 -e ONELOG=no -e LOGCOMBINE=never gh-libreelec make image
       - name: 📂 Upload files to server
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
