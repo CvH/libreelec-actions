@@ -26,7 +26,7 @@ jobs:
       - name: Build LE at docker image
         run: |
           cd LibreELEC.tv
-          echo "ls: $(ls)"
+          echo "ls: $(ls -la)"
           echo "pwd: $(pwd)"
           echo "id: $(id)"
           echo "whoami: $(whoami)"
