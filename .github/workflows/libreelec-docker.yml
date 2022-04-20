@@ -35,10 +35,12 @@ jobs:
           echo "ls: $(ls -la)"
           docker run --rm -v /var/media/DATA/github-actions/sources:/sources \
                           -v /var/media/DATA/github-actions/target:/target \
+                          -v /var/media/DATA/github-actions/build-root:/build-root \
                           -v `pwd`:/build \
                           -w /build -i \
                           -e CUSTOM_GIT_HASH=ghactions -e PROJECT=Generic \
                           -e ARCH=x86_64 -e ONELOG=no -e LOGCOMBINE=never \
+                          -e BUILD_ROOT=/build-root \
                           gh-libreelec make image
       - name: 📂 Upload files to server
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
