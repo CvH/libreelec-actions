@@ -36,4 +36,5 @@ Enter name of work folder: [press Enter for _work] /var/media/DATA/github-action
 
 √ Settings Saved.
 ```
-The you can `docker@1a46680e167f:~/actions-runner$ ./run.sh`
+The you can `docker@1a46680e167f:~/actions-runner$ ./run.sh` from within the docker. 
+Or `docker run --log-driver none -v /var/run/docker.sock:/var/run/docker.sock -v /var/media/DATA/github-actions:/var/media/DATA/github-actions -it github-runner:latest sh /home/docker/runme.sh` from the host.
