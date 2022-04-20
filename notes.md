@@ -11,7 +11,7 @@ docker build --pull -t github-runner github-runner
 
 ```
 
-need to fix the Dockerfile so that the _work directory is specified as:
+need to fix the Dockerfile so that the **_work** directory is specified as:
 ```
 # Authentication
 
